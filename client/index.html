@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Back End Assessment</title>
-  </head>
-  <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./main.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back End Assessment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+  <button id="complimentButton">Get a compliment</button>
+  <button id="fortuneButton">Get Fortune</button>
+  <h1 id="fortuneDisplay">Your Fortune is...</h1>
+  <form id='newImage'>
+    <button id="addImage">Add Happy Picture</button><input type="text" id="img" placeholder="Input image url"/>
+  </form>
+  <div id="pictureContainer"></div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./main.js"></script>
+</body>
 </html>

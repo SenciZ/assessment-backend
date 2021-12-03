@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "imageURL": "https://images.pexels.com/photos/160722/cat-tiger-getiegert-feel-at-home-160722.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+        "id": 2,
+        "imageURL": "https://images.pexels.com/photos/3487734/pexels-photo-3487734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+        "id": 3,
+        "imageURL": "https://images.pexels.com/photos/2385657/pexels-photo-2385657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+        "id": 4,
+        "imageURL": "https://images.pexels.com/photos/3108924/pexels-photo-3108924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+]
