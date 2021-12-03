@@ -72,7 +72,7 @@ function renderImages(arr){
         createImageCard(arr[i])
     }
 }
-
+getNewFortune()
 getAllImages();
 
 
