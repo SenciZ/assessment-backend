@@ -23,8 +23,17 @@ module.exports= {
           let randomFortune = Math.floor(Math.random()* fortunes.length);
           res.status(200).send(fortunes[randomFortune])
       },
+      addFortune: (req, res) =>{
+        const {fortune} = req.body
+        let newFortune = {
+            fortune
+        }
+        fortunes.push(newFortune)
+        console.log(fortunes)
+        res.status(200).send(newFortune)
+    },
 
-
+      
       deletePicture: (req,res) =>{
         const {id} = req.params;
         let index = pictures.findIndex(image => +image.id === +id)

@@ -10,10 +10,14 @@
 <body class="container">
   <button id="complimentButton">Get a compliment</button>
   <button id="fortuneButton">Get Fortune</button>
+  <form id='newFortune'>
+    <button id="addFortune">Add Fortune</button><input type="text" id="fortuneId" placeholder="Input new fortune"/>
+  </form>
   <h1 id="fortuneDisplay">Your Fortune is...</h1>
   <form id='newImage'>
     <button id="addImage">Add Happy Picture</button><input type="text" id="img" placeholder="Input image url"/>
   </form>
+
   <div id="pictureContainer"></div>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./main.js"></script>

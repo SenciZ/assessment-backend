@@ -4,6 +4,10 @@ const fortuneDisplay = document.getElementById('fortuneDisplay')
 const addNewPicture = document.getElementById('addImage')
 const pictureContainer = document.getElementById('pictureContainer')
 
+const newFortuneForm= document.getElementById('newFortune')
+newFortuneForm.addEventListener('submit', newFortuneHandler);
+
+
 
 const newImageForm = document.getElementById('newImage')
 newImageForm.addEventListener('submit', submitHandler);
@@ -22,6 +26,8 @@ const fortuneCallback = (response) => {fortuneDisplay.textContent = "Your Fortun
 const getAllImages = () => axios.get('http://localhost:4004/api/pictures').then(imageCallback).catch(errCallback);
 const addNewImage = body => axios.post('http://localhost:4004/api/pictures', body).then(imageCallback).catch(errCallback)
 
+const addNewFortune = body => axios.post('http://localhost:4004/api/fortune', body).then(alert("Your new fortune of " + body.fortune + " has been added!")).catch(errCallback)
+
 const deleteImage = id => axios.delete(`http://localhost:4004/api/pictures/${id}`).then(imageCallback).catch(errCallback)
 
 const imageCallback = ({data: images}) => renderImages(images);
@@ -39,6 +45,17 @@ function submitHandler(e){
     imageURL.value = '';
 }
 
+function newFortuneHandler(e){
+    e.preventDefault();
+    let newFortune = document.getElementById('fortuneId')
+
+    let fortuneObj = {
+        fortune: newFortune.value,
+    }
+
+    addNewFortune(fortuneObj)
+    newFortune.value = '';
+}
 
 
 function createImageCard(image){

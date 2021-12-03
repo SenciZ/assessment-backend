@@ -11,9 +11,13 @@ app.use(express.json()); // When we want to be able to accept JSON.
 
 app.get("/api/compliment", ctrl.getCompliment);
 app.get("/api/fortune", ctrl.getFortune);
+app.post('/api/fortune', ctrl.addFortune);
+
+
 app.post('/api/pictures', ctrl.addPicture);
 app.get('/api/pictures', ctrl.getImages)
 app.delete('/api/pictures/:id', ctrl.deletePicture)
+
 
 
 
