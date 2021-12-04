@@ -25,7 +25,8 @@ const addNewFortune = body => axios.post('http://localhost:4004/api/fortune', bo
 const deleteImage = id => axios.delete(`http://localhost:4004/api/pictures/${id}`).then(imageCallback).catch(errCallback)
 
 const complimentCallback = (response) => {const data = response.data; alert(data);}
-const imageCallback = ({data: images}) => renderImages(images);
+const imageCallback = ({data: imagesArray}) => {renderImages(imagesArray)
+console.log(imagesArray)};
 const fortuneCallback = (response) => {fortuneDisplay.textContent = "Your Fortune is... "+ response.data.fortune;}
 const errCallback = err => console.log(err)
 
@@ -64,14 +65,15 @@ function renderImages(arr){
 }
 
 function createImageCard(image){
+    const {id, imageURL} = image
     const imageCard = document.createElement('div')
     imageCard.classList.add('imageCard')
     const happyImage = document.createElement('img')
     happyImage.setAttribute('alt', "Happy Image")
-    happyImage.setAttribute('src', image.imageURL)
+    happyImage.setAttribute('src', imageURL)
     const deleteImage = document.createElement("button")
     deleteImage.textContent = "Delete Image"
-    deleteImage.setAttribute("onclick", `deleteImage(${image.id})`)
+    deleteImage.setAttribute("onclick", `deleteImage(${id})`)
     imageCard.appendChild(happyImage)
     imageCard.appendChild(deleteImage)
     pictureContainer.appendChild(imageCard)
